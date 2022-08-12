@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDYELLOWGREEN</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .container{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        button{
+            width:200px;
+            height:200px;
+            margin:10px;
+            font-size:25px;
+            font-weight:800;
+        }
+        #btn{
+            width:120px;
+            height:100px;
+            border-radius:12px;
+            margin-top:300px !important;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="demo">
+        <button style="background-color:red;" value="red"class='box'>red</button>
+        <button style="background-color:yellow;"value="yellow"class='box'>yellow</button>
+        <button style="background-color:green;"value="green" class="box">Green</button>
+        <button style="background-color:blue;"id="btn">clear</button>
+    </div>
+    <script>
+        let  count=document.querySelectorAll(".box");
+        let btn=document.getElementById("btn");
+        btn.onclick=  ()=> clearAll()
+        
+        let timeclick={"red":0,"yellow":0,"green":0}
+       // console.log(count)
+      
+      count.forEach(square=>{
+        square.onclick=()=>{timeclick[square.value]+=1
+        square.innerText=timeclick[square.value]}})
+
+    function clearAll(){
+        timeclick.red=0,
+        timeclick.yellow=0,
+        timeclick.green=0,
+        count.forEach(square=>{square.innerText=" "})
+    }
+
+                            
+        
+
+    </script>
+</body>
+</html>
